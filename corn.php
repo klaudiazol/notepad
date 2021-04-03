@@ -17,7 +17,7 @@ include 'db_conn.php';
     <nav class='container'>
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a class="nav-link" href="corn.php">Notatki Cornella</a>
+                <a class="nav-link active" aria-current="page" href="index.php">Strona główna</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="simple.php">Zwykłe notatki</a>
@@ -28,6 +28,25 @@ include 'db_conn.php';
         </ul>
     </nav>
     
+    <form class = 'container'>
+        <div class="mb-3">
+            <label for="title" class="form-label">Tytuł notatki</label>
+            <input type="text" class="form-control" id="title">
+        </div>
+        <div class="mb-3">
+            <label for="key_words" class="form-label">Słowa kluczowe</label>
+            <textarea class="form-control" id="key_words" rows="1"></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="content" class="form-label">Treść</label>
+            <textarea class="form-control" id="content" rows="3"></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="summary" class="form-label">Podsumowanie</label>
+            <textarea class="form-control" id="summary" rows="2"></textarea>
+        </div>
+
+    </form>
 
 
 <!-- Bootstrap JS -->
