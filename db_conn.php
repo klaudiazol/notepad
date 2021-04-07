@@ -2,12 +2,10 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
+$table = "notatki";
 
 // Create connection
-$conn = new mysqli($servername, $username, $password);
+$conn = new mysqli($servername, $username, $password, $table);
 
-
-
-mysqli_close ($conn);
 ?>
 
