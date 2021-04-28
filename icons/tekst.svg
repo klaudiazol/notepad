@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X8 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="100mm" height="100mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 10000 10000"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str1 {stroke:#333333;stroke-width:163.5;stroke-linecap:round}
+    .str0 {stroke:#333333;stroke-width:163.5;stroke-linecap:round}
+    .fil0 {fill:none}
+    .fil1 {fill:#333333;fill-rule:nonzero}
+   ]]>
+  </style>
+ </defs>
+ <g id="Warstwa_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_2363515020592">
+   <line class="fil0 str0" x1="1374" y1="2506" x2="8626" y2= "2506" />
+   <g>
+    <path class="fil1" d="M1374 3142c-45,0 -82,-37 -82,-82 0,-45 37,-81 82,-81l0 163zm5880 0l-5880 0 0 -163 5880 0 0 163zm0 -163c45,0 82,36 82,81 0,45 -37,82 -82,82l0 -163z"/>
+   </g>
+   <g>
+    <path class="fil1" d="M1374 3696c-45,0 -82,-36 -82,-81 0,-45 37,-82 82,-82l0 163zm6690 0l-6690 0 0 -163 6690 0 0 163zm0 -163c45,0 81,37 81,82 0,45 -36,81 -81,81l0 -163z"/>
+   </g>
+   <line class="fil0 str1" x1="1374" y1="4169" x2="8626" y2= "4169" />
+   <g>
+    <path class="fil1" d="M1374 4805c-45,0 -82,-37 -82,-82 0,-45 37,-82 82,-82l0 164zm6799 0l-6799 0 0 -164 6799 0 0 164zm0 -164c46,0 82,37 82,82 0,45 -36,82 -82,82l0 -164z"/>
+   </g>
+   <g>
+    <path class="fil1" d="M1374 5359c-45,0 -82,-37 -82,-82 0,-45 37,-82 82,-82l0 164zm5488 0l-5488 0 0 -164 5488 0 0 164zm0 -164c45,0 82,37 82,82 0,45 -37,82 -82,82l0 -164z"/>
+   </g>
+   <g>
+    <path class="fil1" d="M1374 5913c-45,0 -82,-37 -82,-82 0,-45 37,-81 82,-81l0 163zm7122 0l-7122 0 0 -163 7122 0 0 163zm0 -163c45,0 81,36 81,81 0,45 -36,82 -81,82l0 -163z"/>
+   </g>
+   <g>
+    <path class="fil1" d="M1374 6467c-45,0 -82,-37 -82,-82 0,-45 37,-81 82,-81l0 163zm4447 0l-4447 0 0 -163 4447 0 0 163zm0 -163c45,0 82,36 82,81 0,45 -37,82 -82,82l0 -163z"/>
+   </g>
+   <g>
+    <path class="fil1" d="M1374 7022c-45,0 -82,-37 -82,-82 0,-46 37,-82 82,-82l0 164zm5637 0l-5637 0 0 -164 5637 0 0 164zm0 -164c45,0 82,36 82,82 0,45 -37,82 -82,82l0 -164z"/>
+   </g>
+   <g>
+    <path class="fil1" d="M1374 7575c-45,0 -82,-36 -82,-81 0,-45 37,-82 82,-82l0 163zm6962 0l-6962 0 0 -163 6962 0 0 163zm0 -163c45,0 81,37 81,82 0,45 -36,81 -81,81l0 -163z"/>
+   </g>
+  </g>
+ </g>
+</svg>

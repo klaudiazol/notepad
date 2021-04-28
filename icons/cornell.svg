@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X8 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="100mm" height="100mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 10000 10000"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str2 {stroke:#333333;stroke-width:170.04;stroke-linecap:round}
+    .str0 {stroke:#333333;stroke-width:170.04;stroke-linecap:round}
+    .str1 {stroke:#333333;stroke-width:170.04;stroke-linecap:round}
+    .str3 {stroke:#333333;stroke-width:170.05;stroke-linecap:round}
+    .fil0 {fill:none}
+   ]]>
+  </style>
+ </defs>
+ <g id="Warstwa_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_2363560559216">
+   <line class="fil0 str0" x1="2020" y1="1953" x2="7980" y2= "1953" />
+   <line class="fil0 str0" x1="2570" y1="1953" x2="2570" y2= "7377" />
+   <line class="fil0 str0" x1="2020" y1="7377" x2="7980" y2= "7377" />
+   <line class="fil0 str1" x1="2020" y1="1564" x2="7980" y2= "1564" />
+   <line class="fil0 str2" x1="2020" y1="8436" x2="7980" y2= "8436" />
+   <line class="fil0 str3" x1="2020" y1="1564" x2="2020" y2= "8436" />
+  </g>
+ </g>
+</svg>
