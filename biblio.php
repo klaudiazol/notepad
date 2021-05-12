@@ -20,7 +20,7 @@ include 'db_conn.php';
                 <a class="nav-link active" aria-current="page" href="index.php">Strona główna</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="simple.php">Zwykłe notatki</a>
+                <a class="nav-link" href="simples.php">Zwykłe notatki</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="corn.php" tabindex="-1" aria-disabled="true">Notatki Cornella</a>
@@ -28,7 +28,7 @@ include 'db_conn.php';
         </ul>
     </nav>
 
-    <form class = 'container'>
+    <form class = 'container' method="POST" action='add_biblio.php'>
         <div class="mb-3">
             <label for="title" class="form-label">Tytuł notatki</label>
             <input type="text" class="form-control" id="title">
@@ -54,6 +54,7 @@ include 'db_conn.php';
             <input type="text" class="form-control" id="journal">
         </div>
        
+        <button type='submit'>Wyśwwietl</button>
 
     </form>
 

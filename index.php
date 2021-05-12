@@ -26,7 +26,7 @@ include 'db_conn.php';
                 <a class="nav-link" href="corn.php">Notatki Cornella</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="simple.php">Zwykłe notatki</a>
+                <a class="nav-link" href="simples.php">Zwykłe notatki</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="biblio.php" tabindex="-1" aria-disabled="true">Notatki bibliograficzne</a>
@@ -57,7 +57,7 @@ include 'db_conn.php';
                                     <a class="nav-link" href="corn.php">Notes 1</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="simple.php">Notes 2</a>
+                                    <a class="nav-link" href="simples.php">Notes 2</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="biblio.php" tabindex="-1" aria-disabled="true">Notes 3</a>
@@ -103,7 +103,7 @@ include 'db_conn.php';
                         <div class="row">
 
                             <div class="col-4">
-                                <a href="simple.php">
+                                <a href="simples.php">
                                     <div class="col-12 border rounded text-center">linearna <img src="icons/tekst.svg" alt="" class="img-fluid"></div>
                                 </a>
                             </div>
