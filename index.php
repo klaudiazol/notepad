@@ -1,5 +1,12 @@
 <?php
 include 'db_conn.php';
+session_start();
+
+if (!(isset($_SESSION['logged']))) {
+    header('location:form_login.php');
+}
+
+session_destroy();
 ?>
 
 <!DOCTYPE html>
@@ -30,6 +37,9 @@ include 'db_conn.php';
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="biblio.php" tabindex="-1" aria-disabled="true">Notatki bibliograficzne</a>
+            </li>
+            <li class='nav-item'>
+                <a class='nav-link' href="logout.php">Wyloguj</a>
             </li>
         </ul>
     </nav>

@@ -1,5 +1,14 @@
 <?php
 include 'db_conn.php';
+
+session_start();
+
+if (!(isset($_SESSION['logged']))) {
+    header('location:form_login.php');
+}
+
+session_destroy();
+
 ?>
 
 <!DOCTYPE html>
