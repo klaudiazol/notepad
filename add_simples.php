@@ -2,18 +2,17 @@
 <?php
 include('db_conn.php');
 
+$title = $_POST['title'];
+$content = $_POST['content'];
 
 // wykonanie zapytania
-$sql = "SELECT * FROM notes INNER JOIN simples ON notes.id = simples.id_notes";
-$result = $conn->query($sql);
+$sql = "INSERT INTO notes(name) VALUES ('" . $title . "');";
+$sql .= "INSERT INTO simples(id_notes, content) VALUES ((SELECT MAX(id) FROM notes), '" . $content . "')";
+$result = $conn->multi_query($sql);
+echo $conn->error;
 
-// Pobieranie wyników do tablicy asocjacyjnej i wyświetlanie ich
-while ($row = $result->fetch_assoc()) {
-    echo "Tytuł notatki: " . $row['name'];
-    echo '<br>';
-    echo "Treść: " . $row['content'];
-    echo '<br>';
-    echo '<br>';
-}
+
+header("location: simples.php");
+
 
 ?>

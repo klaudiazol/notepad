@@ -6,7 +6,6 @@ if (!(isset($_SESSION['logged']))) {
     header('location:form_login.php');
 }
 
-session_destroy();
 ?>
 
 <!DOCTYPE html>
@@ -45,13 +44,26 @@ session_destroy();
         </div>
         <div class="mb-3">
             <label for="content" class="form-label">Treść</label>
-            <textarea class="form-control" name='tresc' id="content" rows="3"></textarea>
+            <textarea class="form-control" name='content' id="content" rows="3"></textarea>
         </div>
 
         <button type='submit'>Wyświetl</button>
 
     </form>
 
+    <?php
+
+    // $sql = "SELECT * FROM simples ORDER BY id_notes DESC LIMIT 1";
+    // $result = $conn->query($sql);
+
+    // while ($row = $result->fetch_assoc()) {
+    //     echo "Tytuł notatki: " . $row['name'];
+    //     echo '<br>';
+    //     echo "Treść: " . $row['content'];
+    //     echo '<br>';
+    //     echo '<br>';
+    // };
+    ?>
 
 
 
