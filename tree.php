@@ -39,21 +39,19 @@ if (!(isset($_SESSION['logged']))) {
     </nav>
 
 
-    <form class='container'>
+    <form class='container' method="POST" action='add_tree.php'>
         <div class="mb-3">
             <label for="title" class="form-label">Tytuł notatki</label>
-            <input type="text" class="form-control" id="title">
+            <input type="text" class="form-control" id="title" name='title'>
         </div>
         <div class="mb-3">
             <label for="content" class="form-label">Treść</label>
-            <textarea class="form-control" id="content" rows="3"></textarea>
+            <textarea class="form-control" id="content" rows="3" name='content'></textarea>
         </div>
 
-
+        <button class="btn btn-outline-primary" type='submit'>Zapisz</button>
     </form>
 
-    <button>Dodaj</button>
-    <ul></ul>
 
     <script>
         $(document).ready(function() {

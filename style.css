@@ -1,19 +1,83 @@
-body {
-    /* font-size: 14px; */
+/* body {
+    background-color: black;
+} */
+
+
+/* nawigacja */
+.navbar {
+    background: white;
+    /* box-shadow: 0 0px 10px 2px #CECECE; */
 }
 
 /* Kwadarty z notatkami */
 .main_notes {
-    box-shadow: 0px 0px 15px 6px #CECECE;
+    box-shadow: 0px 0px 10px 2px #CECECE;
     border-radius: 10px;
+    font-size: 14px;
 }
 
+.shortcut_link {
+    text-decoration: none;
+    color: black;
+}
+
+.fa-plus:before {
+    font-size: 2rem;
+    
+}
+
+
+
 .img-plus {
-    max-width: 30%;
+    /* max-width: 20%; */
+}
+
+/* zmiana kolorów akordeonu */
+.accordion-button:not(.collapsed) {
+    color: black;
+    background-color: #e6e6e69c;
 }
 
 /* Menu na stronie głównej */
 
+.all_fields {
+    height: 90vh;
+}
+
+.search_field {
+    box-shadow: 0px 0px 10px 2px #CECECE;
+    padding: 0;
+    border-radius: 1rem;
+}
+
+.input-group-text {
+    color: #212529;
+    text-align: center;
+    white-space: nowrap;
+    background-color: white;
+    border: none;
+}
+
+.form-control {
+    border: none;
+}
+
+.input-group-sm>.btn,
+.input-group-sm>.form-control,
+.input-group-sm>.form-select,
+.input-group-sm>.input-group-text {
+    font-size: 1rem;
+    border-radius: 1rem;
+}
+
 .menu_panel {
-    padding: 10%;
+    background-color: #e6e6e6;
+    height: 100vh;
+}
+
+.notes_panel {
+    background: white;
+    border-radius: 10px;
+    height: 85%;
+    box-shadow: 0px 0px 10px 2px #CECECE;
 }

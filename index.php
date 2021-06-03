@@ -29,69 +29,54 @@ if (!(isset($_SESSION['logged']))) {
 
 <body>
 
-    <nav class='container'>
-        <ul class="nav flex-column">
-            <!-- <li class="nav-item">
-                <a class="nav-link" href="corn.php">Notatki Cornella</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="simples.php">Zwykłe notatki</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="biblio.php" tabindex="-1" aria-disabled="true">Notatki bibliograficzne</a>
-            </li> -->
-            <li class='nav-item text-end'>
-                <a class='nav-link' href="logout.php">Wyloguj</a>
-            </li>
-        </ul>
-    </nav>
+    <!-- <nav class="navbar navbar-expand-lg container sticky-top">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class='nav-link' href="logout.php">Wyloguj</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav> -->
 
-    <div class="container">
+    <div class="container-fluid m-0 p-0">
 
-        <div class="row">
-            <div class="col-md-2 border menu_panel">
+        <div class="row all_fields m-0">
+            <div class="col-md-2 rounded-3 m-0 p-0">
+                <div class="sticky-top menu_panel border p-2 pt-4">
+                    <div class="row m-0">
+                        <div class="col-md-12 search_field input-group input-group-sm mb-3">
+                            <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fas fa-search"></i></span>
+                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Szukaj">
+                        </div>
+                    </div>
+                    <div class="row notes_panel m-0">
+                        <div class="col-md-12">
 
-                <div class="search_field input-group input-group-sm mb-3">
-                    <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fas fa-search"></i></span>
-                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                        </div>
+                    </div>
+
+                    <div class="row m-0">
+                        <div class="col-md-12 settings_bottom_panel">
+                        </div>
+                    </div>
                 </div>
-
-                <div class="notes_panel">
-
-                </div>
-
-                <div class="settings_bottom_panel">
-
-                </div>
-
-
-
-                <!-- <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                    <i class="fas fa-angle-down"></i>
-                    </>
-
-                    <div class="collapse" id="collapseExample">
-
-
-                        <nav class='container'>
-                            <ul class="nav flex-column">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="corn.php">Notes 1</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="simples.php">Notes 2</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="biblio.php" tabindex="-1" aria-disabled="true">Notes 3</a>
-                                </li>
-                            </ul>
-                        </nav>
-
-                    </div> -->
             </div>
 
-            <div class="col-md-10">
-
+            <div class="col-md-10 border rounded-3">
+                <nav class="navbar navbar-expand-lg container sticky-top">
+                    <div class="container-fluid">
+                        <div class="collapse navbar-collapse" id="navbarText">
+                            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class='nav-link' href="logout.php">Wyloguj</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
                 <div class="accordion">
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingOne">
@@ -101,79 +86,41 @@ if (!(isset($_SESSION['logged']))) {
                         </h2>
                         <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                <div class="row">
-                                    <div class="col-md-3">
+                                <div class="row align-items-center">
+                                    <?php
+                                    // wykonanie zapytania
+                                    $sql = "SELECT * FROM notes";
+                                    $result = $conn->query($sql);
 
-                                        <div class='main_notes m-2 p-3'>
-                                            <div>
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores asperiores repellat necessitatibus perferendis neque non, culpa debitis eos voluptatibus voluptas! Provident dolorem ex, doloremque ullam aspernatur ut exercitationem quidem vel </p>
-                                            </div>
-                                            <div class="trash text-center">
-                                                <button class="btn"><i class="fas fa-trash-alt"></i></button>
-                                            </div>
-                                        </div>
+                                    // Pobieranie wyników do tablicy asocjacyjnej i wyświetlanie ich
+                                    while ($row = $result->fetch_assoc()) {
+                                        echo "<div class='col-md-4'>";
+                                        echo "<a href='note_view.php?id=" . $row['id'] . "&type=" . $row['type'] . "' class='shortcut_link'>";
+                                        echo "<div class='main_notes p-2 m-1'>";
+                                        echo "<div>";
+                                        echo "<p>" . $row['shortcut'] . "</p>";
+                                        echo "</div>";
+                                        echo "</a>";
+                                        echo "<div class='trash text-center'>";
+                                        echo "<button class='btn'><i class='fas fa-trash-alt'></i></button>";
+                                        echo "</div>";
+                                        echo "</div>";
 
-                                    </div>
-                                    <div class="col-md-3">
+                                        echo "</div>";
+                                    };
+                                    ?>
 
-                                        <div class='main_notes m-2 p-3'>
-                                            <div>
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores asperiores repellat necessitatibus perferendis neque non, culpa debitis eos voluptatibus voluptas! Provident dolorem ex, doloremque ullam aspernatur ut exercitationem quidem vel </p>
-                                            </div>
-                                            <div class="trash text-center">
-                                                <button class="btn"><i class="fas fa-trash-alt"></i></button>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <div class="col-md-3">
-
-                                        <div class='main_notes m-2 p-3'>
-                                            <div>
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores asperiores repellat necessitatibus perferendis neque non, culpa debitis eos voluptatibus voluptas! Provident dolorem ex, doloremque ullam aspernatur ut exercitationem quidem vel </p>
-                                            </div>
-                                            <div class="trash text-center">
-                                                <button class="btn"><i class="fas fa-trash-alt"></i></button>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <div class="col-md-3">
-
-                                        <div class='main_notes m-2 p-3'>
-                                            <div>
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores asperiores repellat necessitatibus perferendis neque non, culpa debitis eos voluptatibus voluptas! Provident dolorem ex, doloremque ullam aspernatur ut exercitationem quidem vel </p>
-                                            </div>
-                                            <div class="trash text-center">
-                                                <button class="btn"><i class="fas fa-trash-alt"></i></button>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <div class="col-md-3">
-
-                                        <div class='main_notes m-2 p-3'>
-                                            <div>
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores asperiores repellat necessitatibus perferendis neque non, culpa debitis eos voluptatibus voluptas! Provident dolorem ex, doloremque ullam aspernatur ut exercitationem quidem vel </p>
-                                            </div>
-                                            <div class="trash text-center">
-                                                <button class="btn"><i class="fas fa-trash-alt"></i></button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class='main_notes m-2 p-3'>
-                                            <row class="col-12">
-                                                <!-- Button trigger modal -->
-                                                <button type="button add_notes_button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                                    <img src="icons/plus.svg" class="img-plus">
-                                                </button>
-                                            </row>
-                                            <row class="col-12">
-                                                <div class="trash text-center">
-                                                    <button class="btn"><i class="fas fa-trash-alt"></i></button>
+                                    <div class="col-md-4">
+                                        <div class='main_notes m-1 p-2'>
+                                            <!-- <div class="col-12"> -->
+                                            <div class="row justify-content-around">
+                                                <div class="col-4 align-self-center text-center">
+                                                    <!-- Button trigger modal -->
+                                                    <button type="button add_notes_button" class="btn">
+                                                        <i class="fas fa-plus"></i>
+                                                    </button>
                                                 </div>
-                                            </row>
+                                            </div>
                                         </div>
 
                                     </div>
@@ -183,90 +130,47 @@ if (!(isset($_SESSION['logged']))) {
                     </div>
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingTwo">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                                 Notes 2
                             </button>
                         </h2>
-                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                        <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                <div class="row">
-                                    <div class="col-md-3">
+                                <div class="row align-items-center">
+                                    <?php
+                                    // wykonanie zapytania
+                                    $sql = "SELECT * FROM notes";
+                                    $result = $conn->query($sql);
 
-                                        <div class='main_notes m-2 p-3'>
-                                            <div>
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores asperiores repellat necessitatibus perferendis neque non, culpa debitis eos voluptatibus voluptas! Provident dolorem ex, doloremque ullam aspernatur ut exercitationem quidem vel </p>
-                                            </div>
-                                            <div class="trash text-center">
-                                                <button class="btn"><i class="fas fa-trash-alt"></i></button>
-                                            </div>
-                                        </div>
+                                    // Pobieranie wyników do tablicy asocjacyjnej i wyświetlanie ich
+                                    while ($row = $result->fetch_assoc()) {
+                                        echo "<div class='col-md-4'>";
+                                        echo "<a href='note_view.php?id=" . $row['id'] . "&type=" . $row['type'] . "' class='shortcut_link'>";
+                                        echo "<div class='main_notes p-2 m-1'>";
+                                        echo "<div>";
+                                        echo "<p>" . $row['shortcut'] . "</p>";
+                                        echo "</div>";
+                                        echo "</a>";
+                                        echo "<div class='trash text-center'>";
+                                        echo "<button class='btn'><i class='fas fa-trash-alt'></i></button>";
+                                        echo "</div>";
+                                        echo "</div>";
 
-                                    </div>
-                                    <div class="col-md-3">
+                                        echo "</div>";
+                                    };
+                                    ?>
 
-                                        <div class='main_notes m-2 p-3'>
-                                            <div>
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores asperiores repellat necessitatibus perferendis neque non, culpa debitis eos voluptatibus voluptas! Provident dolorem ex, doloremque ullam aspernatur ut exercitationem quidem vel </p>
-                                            </div>
-                                            <div class="trash text-center">
-                                                <button class="btn"><i class="fas fa-trash-alt"></i></button>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="col-md-3">
-
-                                        <div class='main_notes m-2 p-3'>
-                                            <div>
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores asperiores repellat necessitatibus perferendis neque non, culpa debitis eos voluptatibus voluptas! Provident dolorem ex, doloremque ullam aspernatur ut exercitationem quidem vel </p>
-                                            </div>
-                                            <div class="trash text-center">
-                                                <button class="btn"><i class="fas fa-trash-alt"></i></button>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <div class="col-md-3">
-
-                                        <div class='main_notes m-2 p-3'>
-                                            <div>
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores asperiores repellat necessitatibus perferendis neque non, culpa debitis eos voluptatibus voluptas! Provident dolorem ex, doloremque ullam aspernatur ut exercitationem quidem vel </p>
-                                            </div>
-                                            <div class="trash text-center">
-                                                <button class="btn"><i class="fas fa-trash-alt"></i></button>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <div class="col-md-3">
-
-                                        <div class='main_notes m-2 p-3'>
-                                            <div>
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores asperiores repellat necessitatibus perferendis neque non, culpa debitis eos voluptatibus voluptas! Provident dolorem ex, doloremque ullam aspernatur ut exercitationem quidem vel </p>
-                                            </div>
-                                            <div class="trash text-center">
-                                                <button class="btn"><i class="fas fa-trash-alt"></i></button>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-3">
-
-
-
-                                        <div class='main_notes m-2 p-3'>
-                                            <row class="col-12">
-                                                <!-- Button trigger modal -->
-                                                <button type="button add_notes_button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                                    <img src="icons/plus.svg" class="img-plus">
-                                                </button>
-                                            </row>
-                                            <row class="col-12">
-                                                <div class="trash text-center">
-                                                    <button class="btn"><i class="fas fa-trash-alt"></i></button>
+                                    <div class="col-md-4">
+                                        <div class='main_notes m-1 p-2'>
+                                            <!-- <div class="col-12"> -->
+                                            <div class="row justify-content-around">
+                                                <div class="col-4 align-self-center text-center">
+                                                    <!-- Button trigger modal -->
+                                                    <button type="button add_notes_button" class="btn">
+                                                        <i class="fas fa-plus"></i>
+                                                    </button>
                                                 </div>
-                                            </row>
+                                            </div>
                                         </div>
 
                                     </div>
@@ -276,78 +180,47 @@ if (!(isset($_SESSION['logged']))) {
                     </div>
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingThree">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
                                 Notes 3
                             </button>
                         </h2>
-                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                        <div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                <div class="row">
-                                    <div class="col-md-3">
+                                <div class="row align-items-center">
+                                    <?php
+                                    // wykonanie zapytania
+                                    $sql = "SELECT * FROM notes";
+                                    $result = $conn->query($sql);
 
-                                        <div class='main_notes m-2 p-3'>
-                                            <div>
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores asperiores repellat necessitatibus perferendis neque non, culpa debitis eos voluptatibus voluptas! Provident dolorem ex, doloremque ullam aspernatur ut exercitationem quidem vel </p>
-                                            </div>
-                                            <div class="trash text-center">
-                                                <button class="btn"><i class="fas fa-trash-alt"></i></button>
-                                            </div>
-                                        </div>
+                                    // Pobieranie wyników do tablicy asocjacyjnej i wyświetlanie ich
+                                    while ($row = $result->fetch_assoc()) {
+                                        echo "<div class='col-md-4'>";
+                                        echo "<a href='note_view.php?id=" . $row['id'] . "&type=" . $row['type'] . "' class='shortcut_link'>";
+                                        echo "<div class='main_notes p-2 m-1'>";
+                                        echo "<div>";
+                                        echo "<p>" . $row['shortcut'] . "</p>";
+                                        echo "</div>";
+                                        echo "</a>";
+                                        echo "<div class='trash text-center'>";
+                                        echo "<button class='btn'><i class='fas fa-trash-alt'></i></button>";
+                                        echo "</div>";
+                                        echo "</div>";
 
-                                    </div>
-                                    <div class="col-md-3">
+                                        echo "</div>";
+                                    };
+                                    ?>
 
-                                        <div class='main_notes m-2 p-3'>
-                                            <div>
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores asperiores repellat necessitatibus perferendis neque non, culpa debitis eos voluptatibus voluptas! Provident dolorem ex, doloremque ullam aspernatur ut exercitationem quidem vel </p>
-                                            </div>
-                                            <div class="trash text-center">
-                                                <button class="btn"><i class="fas fa-trash-alt"></i></button>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="col-md-3">
-
-                                        <div class='main_notes m-2 p-3'>
-                                            <div>
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores asperiores repellat necessitatibus perferendis neque non, culpa debitis eos voluptatibus voluptas! Provident dolorem ex, doloremque ullam aspernatur ut exercitationem quidem vel </p>
-                                            </div>
-                                            <div class="trash text-center">
-                                                <button class="btn"><i class="fas fa-trash-alt"></i></button>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <div class="col-md-3">
-
-                                        <div class='main_notes m-2 p-3'>
-                                            <div>
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores asperiores repellat necessitatibus perferendis neque non, culpa debitis eos voluptatibus voluptas! Provident dolorem ex, doloremque ullam aspernatur ut exercitationem quidem vel </p>
-                                            </div>
-                                            <div class="trash text-center">
-                                                <button class="btn"><i class="fas fa-trash-alt"></i></button>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-3">
-
-
-
-                                        <div class='main_notes m-2 p-3'>
-                                            <row class="col-12">
-                                                <!-- Button trigger modal -->
-                                                <button type="button add_notes_button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                                    <img src="icons/plus.svg" class="img-plus">
-                                                </button>
-                                            </row>
-                                            <row class="col-12">
-                                                <div class="trash text-center">
-                                                    <button class="btn"><i class="fas fa-trash-alt"></i></button>
+                                    <div class="col-md-4">
+                                        <div class='main_notes m-1 p-2'>
+                                            <!-- <div class="col-12"> -->
+                                            <div class="row justify-content-around">
+                                                <div class="col-4 align-self-center text-center">
+                                                    <!-- Button trigger modal -->
+                                                    <button type="button add_notes_button" class="btn">
+                                                        <i class="fas fa-plus"></i>
+                                                    </button>
                                                 </div>
-                                            </row>
+                                            </div>
                                         </div>
 
                                     </div>
@@ -355,6 +228,7 @@ if (!(isset($_SESSION['logged']))) {
                             </div>
                         </div>
                     </div>
+
                 </div>
 
             </div>

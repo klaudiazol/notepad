@@ -22,20 +22,20 @@ if (!(isset($_SESSION['logged']))) {
 
 <body>
 
-    <nav class='container'>
-        <ul class="nav flex-column">
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.php">Strona główna</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="corn.php">Notatki Cornella</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="biblio.php" tabindex="-1" aria-disabled="true">Notatki bibliograficzne</a>
-            </li>
-        </ul>
+    <nav class="navbar navbar-expand-lg container">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class='nav-link' href="index.php">Ekran główny</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class='nav-link' href="logout.php">Wyloguj</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
-
 
     <form class='container' method="POST" action='add_simples.php'>
         <div class="mb-3">
@@ -47,7 +47,7 @@ if (!(isset($_SESSION['logged']))) {
             <textarea class="form-control" name='content' id="content" rows="3"></textarea>
         </div>
 
-        <button type='submit'>Wyświetl</button>
+        <button class="btn btn-outline-primary" type='submit'>Zapisz</button>
 
     </form>
 
