@@ -45,7 +45,7 @@ if (!(isset($_SESSION['logged']))) {
 
         <div class="row all_fields m-0">
             <div class="col-md-2 rounded-3 m-0 p-0">
-                <div class="sticky-top menu_panel border p-2 pt-4">
+                <div class="sticky-top menu_panel p-3 pt-4">
                     <div class="row m-0">
                         <div class="col-md-12 search_field input-group input-group-sm mb-3">
                             <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fas fa-search"></i></span>
@@ -65,7 +65,7 @@ if (!(isset($_SESSION['logged']))) {
                 </div>
             </div>
 
-            <div class="col-md-10 border rounded-3">
+            <div class="col-md-10 rounded-3">
                 <nav class="navbar navbar-expand-lg container sticky-top">
                     <div class="container-fluid">
                         <div class="collapse navbar-collapse" id="navbarText">
@@ -116,7 +116,7 @@ if (!(isset($_SESSION['logged']))) {
                                             <div class="row justify-content-around">
                                                 <div class="col-4 align-self-center text-center">
                                                     <!-- Button trigger modal -->
-                                                    <button type="button add_notes_button" class="btn">
+                                                    <button type="button add_notes_button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                                         <i class="fas fa-plus"></i>
                                                     </button>
                                                 </div>
@@ -130,11 +130,12 @@ if (!(isset($_SESSION['logged']))) {
                     </div>
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingTwo">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+
                                 Notes 2
                             </button>
                         </h2>
-                        <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
                                 <div class="row align-items-center">
                                     <?php
@@ -166,7 +167,7 @@ if (!(isset($_SESSION['logged']))) {
                                             <div class="row justify-content-around">
                                                 <div class="col-4 align-self-center text-center">
                                                     <!-- Button trigger modal -->
-                                                    <button type="button add_notes_button" class="btn">
+                                                    <button type="button add_notes_button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                                         <i class="fas fa-plus"></i>
                                                     </button>
                                                 </div>
@@ -180,11 +181,11 @@ if (!(isset($_SESSION['logged']))) {
                     </div>
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingThree">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                 Notes 3
                             </button>
                         </h2>
-                        <div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
                                 <div class="row align-items-center">
                                     <?php
@@ -216,7 +217,7 @@ if (!(isset($_SESSION['logged']))) {
                                             <div class="row justify-content-around">
                                                 <div class="col-4 align-self-center text-center">
                                                     <!-- Button trigger modal -->
-                                                    <button type="button add_notes_button" class="btn">
+                                                    <button type="button add_notes_button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                                         <i class="fas fa-plus"></i>
                                                     </button>
                                                 </div>
@@ -233,8 +234,6 @@ if (!(isset($_SESSION['logged']))) {
 
             </div>
         </div>
-
-
 
     </div>
 
@@ -274,7 +273,7 @@ if (!(isset($_SESSION['logged']))) {
                                 </a>
                             </div>
                             <div class="col-4">
-                                <a href="">
+                                <a href="biblio.php">
                                     <div class="col-12 border rounded text-center px-0">nota bibliograf. <img src="icons/nota.svg" alt="" class="img-fluid"></div>
                                 </a>
                             </div>
