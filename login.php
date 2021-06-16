@@ -23,7 +23,7 @@ if (($result->num_rows) == 1) {
     $row = $result->fetch_assoc();
 
     if (password_verify($password, $row["password"])) {
-        $_SESSION["zalogowany"] = true;
+        $_SESSION["logged"] = true;
         $_SESSION["id"] = $row["id"];
         $_SESSION["login"] = $row["login"];
         $_SESSION["email"] = $row["email"];
